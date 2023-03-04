@@ -8,7 +8,7 @@ if (debug) {
     plugins.push(
         new WebpackShellPlugin({
             onBuildStart: {
-                scripts: ['npm run clean:server'],
+                scripts: ['npm run clean'],
                 blocking: true,
                 parallel: false
             },
@@ -22,7 +22,7 @@ if (debug) {
 }
 
 module.exports = {
-    entry: ['./src/server.ts'],
+    entry: ['./src/index.ts'],
     target: 'node',
     mode: debug ? 'development' : 'production',
     externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
